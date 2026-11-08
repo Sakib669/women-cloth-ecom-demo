@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { Phone, Mail, MapPin, Instagram, Facebook, Youtube } from "lucide-react";
+import { Phone, Mail, MapPin } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -37,21 +37,27 @@ export default function Footer() {
               Fashion for every chapter of your life. Thoughtfully created modern silhouettes honoring timeless craftsmanship.
             </p>
 
-            {/* Social Links */}
+            {/* Social Links with clean vector icons */}
             <div className="flex items-center gap-3">
               <a
                 href="#"
                 aria-label="Instagram"
                 className="w-9 h-9 rounded-full bg-white/5 hover:bg-[#86194A] flex items-center justify-center text-[#D6C7C2] hover:text-white transition-all duration-300"
               >
-                <Instagram className="w-4 h-4" />
+                <svg className="w-4 h-4 fill-none stroke-current" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
               </a>
               <a
                 href="#"
                 aria-label="Facebook"
                 className="w-9 h-9 rounded-full bg-white/5 hover:bg-[#86194A] flex items-center justify-center text-[#D6C7C2] hover:text-white transition-all duration-300"
               >
-                <Facebook className="w-4 h-4" />
+                <svg className="w-4 h-4 fill-currentColor" viewBox="0 0 24 24">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                </svg>
               </a>
               <a
                 href="#"
@@ -65,7 +71,10 @@ export default function Footer() {
                 aria-label="YouTube"
                 className="w-9 h-9 rounded-full bg-white/5 hover:bg-[#86194A] flex items-center justify-center text-[#D6C7C2] hover:text-white transition-all duration-300"
               >
-                <Youtube className="w-4 h-4" />
+                <svg className="w-4 h-4 fill-none stroke-current" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                  <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                </svg>
               </a>
             </div>
           </div>
@@ -126,7 +135,7 @@ export default function Footer() {
         {/* Bottom Bar: Copyright & Payment Gateways */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#8F7E78]">
           <p>
-            &copy; {new Date().getFullYear()} Aurelia Atelier. All rights reserved.
+            &copy; 2026 Aurelia Atelier. All rights reserved.
           </p>
 
           {/* Clean Payment Badges */}
