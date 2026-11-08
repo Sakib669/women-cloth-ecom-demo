@@ -18,12 +18,14 @@ export default function QuickViewModal() {
   const [selectedColor, setSelectedColor] = useState<string>("");
   const [quantity, setQuantity] = useState<number>(1);
   const [addedAnimation, setAddedAnimation] = useState<boolean>(false);
+  const [modalImg, setModalImg] = useState<string>("");
 
   useEffect(() => {
     if (quickViewProduct) {
       setSelectedSize(quickViewProduct.sizes[0] || "Standard");
       setSelectedColor(quickViewProduct.colors[0]?.name || "Default");
       setQuantity(1);
+      setModalImg(quickViewProduct.image);
     }
   }, [quickViewProduct]);
 
@@ -64,11 +66,12 @@ export default function QuickViewModal() {
           {/* Left Column: Image Gallery */}
           <div className="md:col-span-6 relative aspect-[3/4] md:aspect-auto md:min-h-[500px] bg-[#FAF5F3]">
             <Image
-              src={quickViewProduct.image}
+              src={modalImg}
               alt={quickViewProduct.name}
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover object-top"
+              onError={() => setModalImg("https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80")}
             />
             {quickViewProduct.discountBadge && (
               <span className="absolute top-4 left-4 bg-[#86194A] text-white text-xs font-semibold px-3 py-1 rounded-full shadow-sm">

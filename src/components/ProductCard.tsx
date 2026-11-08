@@ -24,6 +24,14 @@ export default function ProductCard({ product }: ProductCardProps) {
     setTimeout(() => setAddedRecently(false), 1600);
   };
 
+  const [imgError, setImgError] = useState(false);
+  const fallbackImg = "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80";
+  const currentSrc = imgError
+    ? fallbackImg
+    : isHovered && product.hoverImage
+    ? product.hoverImage
+    : product.image;
+
   return (
     <div
       className="group relative flex flex-col bg-white rounded-2xl border border-[#F2ECE9] overflow-hidden transition-all duration-500 hover:shadow-xl hover:shadow-[#86194A]/5 hover:-translate-y-1"
@@ -33,11 +41,12 @@ export default function ProductCard({ product }: ProductCardProps) {
       {/* Product Image Stage */}
       <div className="relative aspect-[3/4] w-full bg-[#FAF5F3] overflow-hidden">
         <Image
-          src={isHovered && product.hoverImage ? product.hoverImage : product.image}
+          src={currentSrc}
           alt={product.name}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
           className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
+          onError={() => setImgError(true)}
         />
 
         {/* Discount Badge */}

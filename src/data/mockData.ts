@@ -60,7 +60,7 @@ export const PRODUCTS: Product[] = [
     discountBadge: "-20%",
     rating: 4.8,
     reviewCount: 124,
-    image: "https://images.unsplash.com/photo-1596783049554-3806a6b8e39d?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1502716119720-b23a93e5fe1b?auto=format&fit=crop&w=800&q=80",
     hoverImage: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=800&q=80",
     description: "Crafted from breathable organic chiffon with subtle watercolor floral prints, tiered hemline, and delicate flutter sleeves for warm summer evenings.",
     sizes: ["XS", "S", "M", "L", "XL"],
